@@ -22,10 +22,6 @@ Then go to **System > Firmware > Plugins**, click **Click to view the community 
 
 The live list per OPNsense ABI is at <https://surfhost.github.io/opnsense-repo/>.
 
-## Moving from the old address
-
-Until October 2026 the repository lived at `https://surfhost.github.io/opnsense-plugin-entra-sso/${ABI}`. Firewalls that update `os-openvpn-auth-oauth2` to 1.7.1 or later are switched over automatically. Any other box: fetch the new `surfhost.conf` with the command above, which overwrites the old one.
-
 ## Remove the repository
 
 Remove the plugins first, then:
