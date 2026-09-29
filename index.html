@@ -8,11 +8,30 @@
   :root { color-scheme: light dark; }
   body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; line-height: 1.6;
          max-width: 46rem; margin: 3rem auto; padding: 0 1rem; }
+  code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  pre { background: rgba(127,127,127,.12); padding: 1rem; border-radius: .5rem; overflow-x: auto; }
+  h1 { font-size: 1.6rem; }
+  li { margin-bottom: .5rem; }
+  .muted, footer { font-size: .9rem; opacity: .75; }
+  footer { margin-top: 3rem; }
 </style>
 </head>
 <body>
 <h1>SurfHost OPNsense plugins</h1>
-<p>The first packages are being published. See
-<a href="https://github.com/SurfHost/opnsense-repo">SurfHost/opnsense-repo</a>.</p>
+<p>Package repository for OPNsense plugins published by SurfHost. Add it on your
+firewall once, then install the plugins from <em>System &gt; Firmware &gt; Plugins</em>
+as usual.</p>
+<pre>fetch -o /usr/local/etc/pkg/repos/surfhost.conf \
+    https://surfhost.github.io/opnsense-repo/surfhost.conf
+pkg update</pre>
+<h2>Plugins for FreeBSD:15:amd64</h2>
+<ul>
+  <li><strong>os-openvpn-auth-oauth2</strong> 1.7.1: OpenVPN SSO via OpenID Connect (Microsoft Entra ID and others) (<a href="https://github.com/SurfHost/opnsense-plugin-entra-sso">source and documentation</a>)</li>
+</ul>
+<p class="muted">Dependencies mirrored from FreeBSD because OPNsense does not build them: openvpn-auth-oauth2-1.28.0_4</p>
+<footer>
+  Served from the <code>gh-pages</code> branch of
+  <a href="https://github.com/SurfHost/opnsense-repo">SurfHost/opnsense-repo</a>.
+</footer>
 </body>
 </html>
